@@ -1,7 +1,7 @@
-from google.adk.agents.callback_context import CallbackContext
-from google.genai import types
-from typing import Optional
 import json
+from typing import Optional
+from google.genai import types
+from google.adk.agents.callback_context import CallbackContext
 
 
 def validate_intent_prediction(callback_context: CallbackContext) -> Optional[types.Content]:
@@ -11,10 +11,10 @@ def validate_intent_prediction(callback_context: CallbackContext) -> Optional[ty
     If not valid, modify the state `intent` and sends the new content to update.
     """
     current_state = callback_context.state.to_dict()
-    
+
     with open("ActionPilot/admin/clinic.json", "r") as handle:
         data = json.load(handle)
-    
+
     intents = data["intents"]
     valid_intents = [intent["name"] for intent in intents]
     if current_state.get("intent") and current_state.get("intent").strip() in valid_intents:
@@ -23,6 +23,8 @@ def validate_intent_prediction(callback_context: CallbackContext) -> Optional[ty
     else:
         # current_state['intent'] = None
         return types.Content(
-            parts=[types.Part(text=f"Validation is failed for intent predicted, I would ask you more followups first.")],
+            parts=[
+                types.Part(text=f"Validation is failed for intent predicted, I would ask you more followups first."),
+            ],
             role="model"
         )

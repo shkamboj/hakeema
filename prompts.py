@@ -14,7 +14,6 @@ FAQ or Knowledge-Based Query:
         - Search relevant knowledge sources.
         - Provide a direct and informative answer based on the query."""
 
-
 KB_AGENT_PROMPT = """
 When user is looking specifically for some information, which looks like a frequently asked question, 
 you need to look into the knowledge base and generate an answer. 
@@ -30,7 +29,6 @@ In this particular case, when generating the answer from web search, you need to
     - Add source URLs.
     - State that the answer was generated with web search.
 """
-
 
 INTENT_ENTITY_AGENT_PROMPT = """
 You are an agent which can handle: (Intent Prediction and Entity Collection)

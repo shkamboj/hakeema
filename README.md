@@ -12,7 +12,7 @@ Generic Agent for predicting actions, collection their data, and executing them.
     ```
 2. Run to ingest actions data. (currently one example is used.)
     ```bash
-    python ingest_intents.py
+    python ingest_intents.py -c <path_to_json_file>
     ```
 3. Run to ingest KB. (currently few urls only used.)
     ```bash

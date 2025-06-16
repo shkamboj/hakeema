@@ -5,6 +5,7 @@ aiosignal==1.3.2
 annotated-types==0.7.0
 anyio==4.9.0
 asgiref==3.8.1
+async-timeout==4.0.3
 attrs==25.3.0
 Authlib==1.5.2
 backoff==2.2.1
@@ -26,6 +27,7 @@ distro==1.9.0
 docstring_parser==0.16
 durationpy==0.10
 emoji==2.14.1
+exceptiongroup==1.3.0
 fastapi==0.115.9
 filelock==3.18.0
 filetype==1.2.0
@@ -77,10 +79,11 @@ kubernetes==32.0.1
 langchain==0.3.25
 langchain-chroma==0.2.4
 langchain-community==0.3.24
-langchain-core==0.3.60
+langchain-core==0.3.65
+langchain-huggingface==0.3.0
 langchain-text-splitters==0.3.8
 langdetect==1.0.9
-langsmith==0.3.42
+langsmith==0.3.45
 lxml==5.4.0
 markdown-it-py==3.0.0
 MarkupSafe==3.0.2
@@ -152,7 +155,6 @@ safetensors==0.5.3
 scikit-learn==1.6.1
 scipy==1.15.3
 sentence-transformers==4.1.0
-setuptools==80.8.0
 shapely==2.1.1
 shellingham==1.5.4
 six==1.17.0
@@ -165,6 +167,7 @@ sympy==1.14.0
 tenacity==9.1.2
 threadpoolctl==3.6.0
 tokenizers==0.21.1
+tomli==2.2.1
 torch==2.7.0
 tqdm==4.67.1
 transformers==4.52.2
@@ -177,6 +180,7 @@ unstructured==0.17.2
 unstructured-client==0.35.0
 uritemplate==4.1.1
 urllib3==2.4.0
+uv==0.7.13
 uvicorn==0.34.2
 uvloop==0.21.0
 watchfiles==1.0.5

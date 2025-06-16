@@ -1,6 +1,7 @@
 import os
 import json
 import uuid
+import logging
 import random, string
 from datetime import datetime
 from typing import Dict, List
@@ -9,6 +10,7 @@ from langchain_chroma import Chroma
 from google.adk.tools import ToolContext
 from langchain.embeddings import HuggingFaceEmbeddings
 
+log = logging.getLogger(__name__)
 
 embedding_model = HuggingFaceEmbeddings(
     model_name="thenlper/gte-base",
@@ -91,7 +93,7 @@ def retrieve_top_5_intents(query: str, n_results: int = 5, score_threshold: floa
                 })
                 covered.add(metadata_json.get('name'))
 
-    print(intents, "possible intents")
+    log.info(intents, "possible intents")
     return {
         'possible_intents': intents,
     }
@@ -136,7 +138,7 @@ def validate_and_dump_collected_data_json(tool_context: ToolContext, intent: str
                 
                 if validation_tool:
                     response = globals()[validation_tool](value)
-                    print("debug response, ", response)
+                    log.debug("debug response, ", response)
                     if type(response) == str:
                         return response
                 
@@ -148,7 +150,7 @@ def validate_and_dump_collected_data_json(tool_context: ToolContext, intent: str
 
         return f"Data collected till now: {collection_progress}"
     except Exception as e:
-        print(f"exception : {e}")
+        log.error(f"exception : {e}")
         return 'Validation failed'
 
 

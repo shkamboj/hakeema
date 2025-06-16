@@ -1,3 +1,4 @@
+import logging
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -5,6 +6,7 @@ from langchain_community.document_loaders import PlaywrightURLLoader
 from langchain.embeddings import HuggingFaceEmbeddings  # Changed from OpenAIEmbeddings
 
 load_dotenv()
+log = logging.getLogger(__name__)
 
 urls = [
     "https://www.genomicseducation.hee.nhs.uk/genotes/knowledge-hub/wilson-disease/", 
@@ -35,4 +37,4 @@ vs = Chroma.from_documents(
     persist_directory=persist_directory,
 )
 
-print(f"Successfully ingested {len(splits)} document chunks using gte-base embeddings")
+log.info(f"Successfully ingested {len(splits)} document chunks using gte-base embeddings")

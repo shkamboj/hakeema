@@ -1,8 +1,10 @@
 import os
+import logging
 from google.genai import types
 from google.adk.tools.agent_tool import AgentTool
 from google.adk.agents import LlmAgent, SequentialAgent, Agent, LoopAgent
 
+from ._log_formatter import CustomFormatter
 from .structures import IntentPredictionOutput
 from .callbacks import validate_intent_prediction
 from .tools import register_patient, submit_feedback
@@ -15,6 +17,13 @@ from .tools import (
     fetch_what_entities_needs_to_be_collected, retrieve_relevant_context, retrieve_top_5_intents,
 )
 
+
+custom_handler = logging.StreamHandler()
+custom_handler.setFormatter(CustomFormatter())
+logging.basicConfig(
+    level=logging.INFO,
+    handlers=[custom_handler],
+)
 
 greeting_agent = LlmAgent(
     name="General_Chat_Agent",

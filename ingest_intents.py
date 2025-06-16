@@ -1,10 +1,12 @@
 import json
+import logging
 from dotenv import load_dotenv
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain.embeddings import HuggingFaceEmbeddings
 
 load_dotenv()
+log = logging.getLogger(__name__)
 
 with open('ActionPilot/admin/clinic.json', 'r') as handle:
     data = json.load(handle)
@@ -32,4 +34,4 @@ vs = Chroma.from_documents(
     persist_directory=persist_directory,
 )
 
-print(f"Successfully ingested {len(docs)} intent utterances using gte-base embeddings")
+log.info(f"Successfully ingested {len(docs)} intent utterances using gte-base embeddings")

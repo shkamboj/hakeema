@@ -1,1 +1,1 @@
-## Storage for structured JSON collected
+# Storage for structured JSON collected

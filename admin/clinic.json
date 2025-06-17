@@ -10,57 +10,57 @@
       ],
       "entities": [
         {
-            "key": "appointment_type",
-            "possible_values": ["consultation", "general checkup"],
-            "validations": "Must be single value and from the possible values only",
-            "validation_tool": null,
-            "type": "String"
+          "key": "appointment_type",
+          "possible_values": ["consultation", "general checkup"],
+          "validations": "Must be single value and from the possible values only",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "date",
-            "possible_values": null,
-            "validations": "Should be in future only, should be validated by checking today's date",
-            "validation_tool": "today_or_future_date",
-            "type": "ISO_DateTime"
+          "key": "date",
+          "possible_values": null,
+          "validations": "Should be in future only, should be validated by checking today's date",
+          "validation_tool": "today_or_future_date",
+          "type": "ISO_DateTime"
         },
         {
-            "key": "date_time",
-            "possible_values": null,
-            "validations": "Should be in future only, should be validated by checking today's date and current time",
-            "validation_tool": "date_is_in_future",
-            "type": "ISO_DateTime"
+          "key": "date_time",
+          "possible_values": null,
+          "validations": "Should be in future only, should be validated by checking today's date and current time",
+          "validation_tool": "date_is_in_future",
+          "type": "ISO_DateTime"
         },
         {
-            "key": "department_name",
-            "possible_values": [
-                "Emergency Department (ER / A&E)",
-                "Intensive Care Unit (ICU)",
-                "Internal Medicine",
-                "General Surgery",
-                "Cardiology",
-                "Orthopedics",
-                "Obstetrics and Gynecology (OB/GYN)",
-                "Pediatrics",
-                "Radiology / Imaging",
-                "Pharmacy"
-            ],
-            "validations": "Must be single value and from the possible values only",
-            "validation_tool": null,
-            "type": "String"
+          "key": "department_name",
+          "possible_values": [
+            "Emergency Department (ER / A&E)",
+            "Intensive Care Unit (ICU)",
+            "Internal Medicine",
+            "General Surgery",
+            "Cardiology",
+            "Orthopedics",
+            "Obstetrics and Gynecology (OB/GYN)",
+            "Pediatrics",
+            "Radiology / Imaging",
+            "Pharmacy"
+          ],
+          "validations": "Must be single value and from the possible values only",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "doctor_name",
-            "possible_values": null,
-            "validations": null,
-            "validation_tool": null,
-            "type": "String"
+          "key": "doctor_name",
+          "possible_values": null,
+          "validations": null,
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "patient_identifier",
-            "possible_values": null,
-            "validations": "First three keywords should be alphabets and next 6 should be numbers",
-            "validation_tool": null,
-            "type": "String"
+          "key": "patient_identifier",
+          "possible_values": null,
+          "validations": "First three keywords should be alphabets and next 6 should be numbers",
+          "validation_tool": null,
+          "type": "String"
         }
       ]
     },
@@ -74,29 +74,29 @@
       ],
       "entities": [
         {
-            "key": "department_name",
-            "possible_values": [
-                "Emergency Department (ER / A&E)",
-                "Intensive Care Unit (ICU)",
-                "Internal Medicine",
-                "General Surgery",
-                "Cardiology",
-                "Orthopedics",
-                "Obstetrics and Gynecology (OB/GYN)",
-                "Pediatrics",
-                "Radiology / Imaging",
-                "Pharmacy"
-            ],
-            "validations": "Must be single value and from the possible values only",
-            "validation_tool": null,
-            "type": "String"
+          "key": "department_name",
+          "possible_values": [
+            "Emergency Department (ER / A&E)",
+            "Intensive Care Unit (ICU)",
+            "Internal Medicine",
+            "General Surgery",
+            "Cardiology",
+            "Orthopedics",
+            "Obstetrics and Gynecology (OB/GYN)",
+            "Pediatrics",
+            "Radiology / Imaging",
+            "Pharmacy"
+          ],
+          "validations": "Must be single value and from the possible values only",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "date",
-            "possible_values": null,
-            "validations": "Should be today or future only, should be validated by checking today's date",
-            "validation_tool": "today_or_future_date",
-            "type": "ISO_DateTime"
+          "key": "date",
+          "possible_values": null,
+          "validations": "Should be today or future only, should be validated by checking today's date",
+          "validation_tool": "today_or_future_date",
+          "type": "ISO_DateTime"
         }
       ]
     },
@@ -110,18 +110,18 @@
       ],
       "entities": [
         {
-            "key": "test_date",
-            "possible_values": null,
-            "validations": "Should be today or past only, should be validated by checking today's date",
-            "validation_tool": "today_or_past_date",
-            "type": "ISO_DateTime"
+          "key": "test_date",
+          "possible_values": null,
+          "validations": "Should be today or past only, should be validated by checking today's date",
+          "validation_tool": "today_or_past_date",
+          "type": "ISO_DateTime"
         },
         {
-            "key": "patient_identifier",
-            "possible_values": null,
-            "validations": "First three keywords should be alphabets and next 6 should be numbers",
-            "validation_tool": null,
-            "type": "String"
+          "key": "patient_identifier",
+          "possible_values": null,
+          "validations": "First three keywords should be alphabets and next 6 should be numbers",
+          "validation_tool": null,
+          "type": "String"
         }
       ]
     },
@@ -135,11 +135,11 @@
       ],
       "entities": [
         {
-            "key": "patient_identifier",
-            "possible_values": null,
-            "validations": "First three keywords should be alphabets and next 6 should be numbers",
-            "validation_tool": null,
-            "type": "String"
+          "key": "patient_identifier",
+          "possible_values": null,
+          "validations": "First three keywords should be alphabets and next 6 should be numbers",
+          "validation_tool": null,
+          "type": "String"
         }
       ]
     },
@@ -153,53 +153,53 @@
       ],
       "entities": [
         {
-            "key": "patient_name",
-            "possible_values": null,
-            "validations": "Should look like a name",
-            "validation_tool": null,
-            "type": "String"
+          "key": "patient_name",
+          "possible_values": null,
+          "validations": "Should look like a name",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "date_of_birth",
-            "possible_values": null,
-            "validations": "Should be today's or past date, should be validated by checking today's date and current time",
-            "validation_tool": "today_or_past_date",
-            "type": "ISO_DateTime"
+          "key": "date_of_birth",
+          "possible_values": null,
+          "validations": "Should be today's or past date, should be validated by checking today's date and current time",
+          "validation_tool": "today_or_past_date",
+          "type": "ISO_DateTime"
         },
         {
-            "key": "contact_number",
-            "possible_values": null,
-            "validations": "Should be a 10 digit number",
-            "validation_tool": "ten_digit_number",
-            "type": "10_digit_number"
+          "key": "contact_number",
+          "possible_values": null,
+          "validations": "Should be a 10 digit number",
+          "validation_tool": "ten_digit_number",
+          "type": "10_digit_number"
         },
         {
-            "key": "insurance_provider",
-            "possible_values": ["ICICI Lombard", "Kotak Health Insurance", "Other"],
-            "validations": "Should be from possible values only, can be `Other`",
-            "validation_tool": null,
-            "type": "String"
+          "key": "insurance_provider",
+          "possible_values": ["ICICI Lombard", "Kotak Health Insurance", "Other"],
+          "validations": "Should be from possible values only, can be `Other`",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "emergency_contact_name",
-            "possible_values": null,
-            "validations": "Should look like a name",
-            "validation_tool": null,
-            "type": "String"
+          "key": "emergency_contact_name",
+          "possible_values": null,
+          "validations": "Should look like a name",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "emergency_contact_number",
-            "possible_values": null,
-            "validations": "Should be a 10 digit number",
-            "validation_tool": "ten_digit_number",
-            "type": "10_digit_number"
+          "key": "emergency_contact_number",
+          "possible_values": null,
+          "validations": "Should be a 10 digit number",
+          "validation_tool": "ten_digit_number",
+          "type": "10_digit_number"
         },
         {
-            "key": "address",
-            "possible_values": null,
-            "validations": "Should contain pin/zip code as well",
-            "validation_tool": null,
-            "type": "String"
+          "key": "address",
+          "possible_values": null,
+          "validations": "Should contain pin/zip code as well",
+          "validation_tool": null,
+          "type": "String"
         }
       ]
     },
@@ -213,25 +213,25 @@
       ],
       "entities": [
         {
-            "key": "feedback_type",
-            "possible_values": ["complaint", "appreciation"],
-            "validations": "Should be from given possible values only",
-            "validation_tool": null,
-            "type": "String"
+          "key": "feedback_type",
+          "possible_values": ["complaint", "appreciation"],
+          "validations": "Should be from given possible values only",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "feedback_text",
-            "possible_values": null,
-            "validations": "Should look like positive/negative or neutral feedback text",
-            "validation_tool": null,
-            "type": "String"
+          "key": "feedback_text",
+          "possible_values": null,
+          "validations": "Should look like positive/negative or neutral feedback text",
+          "validation_tool": null,
+          "type": "String"
         },
         {
-            "key": "patient_identifier",
-            "possible_values": null,
-            "validations": "First three keywords should be alphabets and next 6 should be numbers",
-            "validation_tool": null,
-            "type": "String"
+          "key": "patient_identifier",
+          "possible_values": null,
+          "validations": "First three keywords should be alphabets and next 6 should be numbers",
+          "validation_tool": null,
+          "type": "String"
         }
       ]
     }

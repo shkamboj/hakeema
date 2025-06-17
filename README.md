@@ -1,10 +1,24 @@
-# adk-hack
-Repo for ADK hackathon
+# ADK Hack
 
-### (Generic Agent for predicting actions, collection their data, and executing them).
+Repo for ADK hackathon.
 
-## Steps to run
-1. Run `pip install -r ActionPilot/requirements.txt` to install ActionPilot agent's requirements.
-2. Run `python ActionPilot/ingest_intents.py` to ingest actions data. (currently one example is used.)
-3. Run `python ActionPilot/ingest_kb.py` to ingest KB. (currently few urls only used.)
-4. Run `adk web` to initiate the web UI on port 8000.
+Generic Agent for predicting actions, collection their data, and executing them.
+
+## Setup
+
+1. Run  to install ActionPilot agent's requirements.
+    ```bash
+    pip install -r requirements.txt
+    ```
+2. Run to ingest actions data. (currently one example is used.)
+    ```bash
+    python ingest_intents.py -c <path_to_json_file>
+    ```
+3. Run to ingest KB. (currently few urls only used.)
+    ```bash
+    python ingest_kb.py
+    ```
+4. Run  to initiate the web UI on port 8000.
+    ```bash
+    adk web
+    ```

@@ -59,6 +59,11 @@ Embeddings: Hugging Face thenlper/gte-base
 
 Supporting Libraries: LangChain, SerpAPI
 
+## Flow Diagram (Agentic)
+
+![Flow Diagram](https://github.com/shkamboj/hakeema/blob/main/agentic_hakeema_flow.jpeg)
+
+
 
 ## 🔮 What's Next: The Roadmap for Hakeema
 We are excited about the future of Hakeema and plan to expand its capabilities:

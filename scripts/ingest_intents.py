@@ -7,8 +7,8 @@ from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
 
 
-from _utils import validate_file_path
-from _log_formatter import CustomFormatter
+from agents._utils import validate_file_path
+from agents._log_formatter import CustomFormatter
 
 load_dotenv()
 log = logging.getLogger(__name__)
@@ -47,7 +47,8 @@ if __name__ == '__main__':
         encode_kwargs={'normalize_embeddings': False},
     )
 
-    persist_directory = "./ActionPilot/VectorDB/chroma_db_intents"
+    persist_directory = "./VectorDB/chroma_db_intents"
+    log.info(f"Persisting vector store to {persist_directory}")
     vs = Chroma.from_documents(
         documents=docs,
         embedding=embedding_model,

@@ -10,6 +10,8 @@ from langchain_chroma import Chroma
 from google.adk.tools import ToolContext
 from langchain.embeddings import HuggingFaceEmbeddings
 
+from agents.constants import INTENTS_JSON_PATH
+
 log = logging.getLogger(__name__)
 
 embedding_model = HuggingFaceEmbeddings(
@@ -36,7 +38,7 @@ def retrieve_relevant_context(query: str, n_results: int = 15, score_threshold: 
     """
 
     vs = Chroma(
-        persist_directory="./ActionPilot/VectorDB/chroma_db",
+        persist_directory="./VectorDB/chroma_db",
         embedding_function=embedding_model,
     )
 
@@ -67,7 +69,7 @@ def retrieve_relevant_context(query: str, n_results: int = 15, score_threshold: 
 
 def retrieve_top_5_intents(query: str, n_results: int = 5, score_threshold: float = 0.2) -> Dict[str, List]:
     vs = Chroma(
-        persist_directory="./ActionPilot/VectorDB/chroma_db_intents",
+        persist_directory="./VectorDB/chroma_db_intents",
         embedding_function=embedding_model,
     )
 
@@ -93,7 +95,7 @@ def retrieve_top_5_intents(query: str, n_results: int = 5, score_threshold: floa
                 })
                 covered.add(metadata_json.get('name'))
 
-    log.info(intents, "possible intents")
+    log.info(f"{intents}, possible intents")
     return {
         'possible_intents': intents,
     }
@@ -101,7 +103,7 @@ def retrieve_top_5_intents(query: str, n_results: int = 5, score_threshold: floa
 
 def fetch_what_entities_needs_to_be_collected(intent: str):
     intent = intent.strip()
-    with open('ActionPilot/admin/clinic.json', 'r') as handle:
+    with open(INTENTS_JSON_PATH, 'r') as handle:
         data = json.load(handle)
 
     intents = data.get('intents')
@@ -113,7 +115,7 @@ def fetch_what_entities_needs_to_be_collected(intent: str):
 
 
 def fetch_in_what_structure_entities_needs_to_be_stored(intent: str):
-    with open('ActionPilot/admin/clinic.json', 'r') as handle:
+    with open(INTENTS_JSON_PATH, 'r') as handle:
         data = json.load(handle)
 
     intents = data.get('intents')
@@ -138,14 +140,14 @@ def validate_and_dump_collected_data_json(tool_context: ToolContext, intent: str
                 
                 if validation_tool:
                     response = globals()[validation_tool](value)
-                    log.debug("debug response, ", response)
+                    log.debug(f"debug response, {response}")
                     if type(response) == str:
                         return response
                 
                 collection_progress[entity.get('key')] = value
             else:
                 collection_progress[entity.get('key')] = None
-        with open(f"ActionPilot/dumps/{session_id}.json", 'w') as handle:
+        with open(f"./dumps/{session_id}.json", 'w') as handle:
             json.dump(obj, handle)
 
         return f"Data collected till now: {collection_progress}"
@@ -219,10 +221,10 @@ def today_or_past_date(iso_date: str):
 def ten_digit_number(number: str):
     for char in number:
         if char not in '0123456789':
-            return 'Not a valid contact number because it contains non numerics'
+            return "Not a valid contact number because it contains non numerics"
     
     if len(number) != 10:
-        return 'Not a valid contact number because length is not equal to 10'
+        return "Not a valid contact number because length is not equal to 10"
     
     return True
 

@@ -3,6 +3,8 @@ from typing import Optional
 from google.genai import types
 from google.adk.agents.callback_context import CallbackContext
 
+from agents.constants import INTENTS_JSON_PATH
+
 
 def validate_intent_prediction(callback_context: CallbackContext) -> Optional[types.Content]:
     """
@@ -12,7 +14,7 @@ def validate_intent_prediction(callback_context: CallbackContext) -> Optional[ty
     """
     current_state = callback_context.state.to_dict()
 
-    with open("ActionPilot/admin/clinic.json", "r") as handle:
+    with open(INTENTS_JSON_PATH, "r") as handle:
         data = json.load(handle)
 
     intents = data["intents"]

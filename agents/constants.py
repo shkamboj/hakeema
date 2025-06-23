@@ -1,0 +1,1 @@
+INTENTS_JSON_PATH = "./agents/admin/clinic.json"

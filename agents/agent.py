@@ -70,9 +70,7 @@ action_executor_agent = Agent(
     name="Action_Executor_Agent",
     generate_content_config=types.GenerateContentConfig(temperature=0.0),
     model="gemini-2.0-flash-exp",
-    description=(
-        "Agent used to executed the actions based on predicted intent and collected entities",
-    ),
+    description="Agent used to executed the actions based on predicted intent and collected entities",
     instruction="""
     You have access to multiple tools, you can execute actions as per requirements.
     Just ask a confirmation from the user before proceeding.
@@ -112,9 +110,7 @@ root_agent = Agent(
     name="root_agent",
     model="gemini-2.0-flash-exp",
     generate_content_config=types.GenerateContentConfig(temperature=0.0),
-    description=(
-        "Root agent"
-    ),
+    description="Root agent",
     instruction=ROOT_AGENT_PROMPT,
     sub_agents=[greeting_agent, intent_entity_agent, kb_agent, notification_agent],
 )

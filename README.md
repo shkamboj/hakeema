@@ -1,20 +1,20 @@
-Hakeema: AI-Powered Patient Experience Platform
+# Hakeema: AI-Powered Patient Experience Platform
 Hakeema is an intelligent, conversational AI platform built with Google's Gemini and Agent Development Kit (ADK) to automate and streamline patient-clinic interactions, creating a seamless and modern healthcare experience.
 
-🚀 The Problem
+## 🚀 The Problem
 The administrative side of healthcare is often a source of friction for patients. Long wait times on the phone, confusing processes for registration, and difficulty getting timely information create a frustrating experience. For clinics, these manual processes are inefficient, costly, and divert staff from focusing on high-value patient care.
 
-✨ Our Solution
+## ✨ Our Solution
 Hakeema provides clinics with a 24/7 virtual assistant that intelligently handles a wide range of patient needs. By integrating a natural language interface into a clinic's website or app, Hakeema makes healthcare administration effortless for patients and efficient for providers.
 
 This project was developed for a Google Hackathon, with a focus on leveraging Google's powerful AI stack to solve a real-world problem.
 
-🎬 Demo
+## 🎬 Demo
 Watch the Video Demo: [Link to your 2-minute video walkthrough]
 
 Try it Live: [Link to your live deployment, if available]
 
-🌟 Key Features
+## 🌟 Key Features
 Multi-Turn Intent Handling: Manages complex, conversational workflows for a variety of tasks.
 
 Intelligent Appointment Booking: Schedule appointments through a natural conversation.
@@ -29,7 +29,7 @@ Feedback Collection: Easily gather and structure patient compliments or complain
 
 Highly Extensible: New intents and capabilities can be added by simply updating a JSON configuration, requiring minimal code changes.
 
-🏗️ How It Works: A Multi-Agent Architecture
+## 🏗️ How It Works: A Multi-Agent Architecture
 Hakeema is built on a sophisticated multi-agent architecture using the Google Agent Development Kit (ADK). This design ensures that tasks are handled by specialized agents, leading to more robust and accurate outcomes.
 
 Triage with the root_agent: All user input first hits the root_agent. Its job is to determine the user's general purpose: is it chit-chat, a request for information, or an action-oriented task?
@@ -46,7 +46,7 @@ Real-Time Validation: As each piece of information is collected, it is passed to
 
 Action Execution: After all required entities are collected and validated, the action_executor_agent takes over. It confirms the details with the user one last time and then calls the final tool (e.g., register_patient) to complete the process.
 
-🛠️ Technology Stack
+## 🛠️ Technology Stack
 Core AI/LLM: Google Gemini 2.0 Flash
 
 Agent Framework: Google Agent Development Kit (ADK)
@@ -60,7 +60,7 @@ Embeddings: Hugging Face thenlper/gte-base
 Supporting Libraries: LangChain, SerpAPI
 
 
-🔮 What's Next: The Roadmap for Hakeema
+## 🔮 What's Next: The Roadmap for Hakeema
 We are excited about the future of Hakeema and plan to expand its capabilities:
 
 Google Wallet Integration: Allow seamless payment of medical bills.
